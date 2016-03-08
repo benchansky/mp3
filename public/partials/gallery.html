@@ -1,0 +1,13 @@
+
+<div class ="row">
+    <a href="#/gallery" class="button">Gallery</a>
+    <a href="#/list" class="button">Search</a>
+  </div>
+
+<ul class="movies">
+          <li ng-repeat="movie in movies" class="thumbnail">
+            <a href="#/details/{{movie.imdbID}}" class="thumb"><img ng-src="./data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}"></a>
+            <a href="#/details/{{movie.imdbID}}">
+            <p>{{movie.title}}</p></a>
+          </li>
+        </ul>

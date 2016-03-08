@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <h1> LIST VIEW</h1>
+  <div class ="row">
+    <a href="#/gallery" class="button">Gallery</a>
+    <a href="#/list" class="button">Search</a>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp" ng-class="{reverse:reverse}">
+        <option value="title">Title</option>
+        <option value="rank">Rank</option>
+      </select>
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="movies">
+        <li ng-repeat="movie in movies | filter:query | orderBy:orderProp" class="thumbnail">
+          <a href="#/details/{{movie.imdbID}}" class="thumb"><img ng-src="./data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}"></a>
+          <a href="#/details/{{movie.imdbID}}">
+          <p>{{movie.title}}</p>
+          </a>
+          <p>Rank: {{movie.rank}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
