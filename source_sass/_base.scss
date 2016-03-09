@@ -20,11 +20,17 @@ img {
 }
 
 .detail {
-	text-align:center;
+	margin: auto;
+    width: 50%;
+    display: table;
 }
 
 .help_details{
+    text-align:center;
+    height: 300px;
 	background-color:$purple;
+	display: table-cell;
+
 
 }
 
