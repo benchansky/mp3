@@ -1,37 +1,35 @@
 <div class="container-fluid">
   <div class="center">
-    <div class="row">
+    <div class="row details-menu">
         Search: <input ng-model="query">
+        <br>
         Sort by:
         <select ng-model="orderProp" ng-class="{reverse:reverse}">
           <option value="title">Title</option>
           <option value="rank">Rank</option>
         </select>
-     </div>
 
-      <div class"row">
         <input type="radio" ng-model="reverse" ng-value="false" selected> Ascending
         <input type="radio" ng-model="reverse" ng-value="true" selected> Descending
       </div>
 
 
 
-
+      <div class="row">
         <ul class="movies">
-          <div ng-repeat="movie in movies | filter:query | orderBy:orderProp:reverse" class="row">
-              <div class="large-4 columns">
+          <div ng-repeat="movie in movies | filter:query | orderBy:orderProp:reverse" class="row list_help">
+              <div class="large-4 columns list_help">
                 <a href="#/details/{{movie.imdbID}}" class="thumb"><img ng-src="./data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}"></a>
               </div>
-              <div class="large-8 columns">
-                <div class="movie_listing">
+              <div class="large-8 columns list_help">
                 <a href="#/details/{{movie.imdbID}}">
                   <p>{{movie.title}}</p>
                 </a>
                 <p>Rank: {{movie.rank}}</p>
-              </div>
             </div>
           </div>
         </ul>
+      </div>
 
   </div>
 </div>

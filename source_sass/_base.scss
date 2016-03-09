@@ -34,6 +34,16 @@ img {
 
 }
 
+.list_help{
+		background-color:$gray;
+		border-top: thick double #fff;
+    	border-color: #fff;
+
+    	p{
+    		color:$black;
+    	}
+
+}
 .movie_listing{
 	width:100%;
 	background-color:$gray;
