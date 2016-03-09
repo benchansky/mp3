@@ -90,17 +90,45 @@ mp3Controllers.controller('galleryController', ['$scope', '$http', '$routeParams
   function($scope, $http, $routeParams) {
   	$scope.movies = [];
 
+  	$scope.genres = [];
+  	$scope.genres.push("All");
+  	$scope.currMovies = [];
   		
 		    $http.get('./data/imdb250.json').
 			  success(function(data, status, headers, config) {
 			    //console.log(data);
 			    $scope.movies=data;
+			    $scope.currMovies=data;
+				for (var i in $scope.movies){
+					for( var z in $scope.movies[i].genre){
+						if ($.inArray($scope.movies[i].genre[z], $scope.genres)==-1) {
+						$scope.genres.push($scope.movies[i].genre[z]);
+					}
+				}
+				//
+					
+				}
+
 			  }).
 			  error(function(data, status, headers, config) {
 			    console.log("shucks");
 			  });
 
+		 $scope.filterMovies = function (g) {
+		 		var genre=g;
+		 		$scope.currMovies = [];
+		 		if(genre=="All"){
+		 			$scope.currMovies=$scope.movies;
+		 		} else {
+			        for (var i in $scope.movies){
+							if ($.inArray(genre, $scope.movies[i].genre)!=-1) {
+								$scope.currMovies.push($scope.movies[i]);
+						}
 
+					}
+				}
+			
+		    };
 
 
   }]);

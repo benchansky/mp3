@@ -4,10 +4,16 @@
     <a href="#/list" class="button">Search</a>
   </div>
 
-<ul class="movies">
-          <li ng-repeat="movie in movies" class="thumbnail">
+<div class ="row"  style="margin-bottom: 10px; display: inline-block;">
+  <a class="button" ng-repeat="item in genres" ng-click="filterMovies(this.item)"> {{item}} </a> 
+  </div>  
+
+  <div class="gallery_content">
+          <div class="columns large-2 medium-3 small-4" ng-repeat="movie in currMovies">
             <a href="#/details/{{movie.imdbID}}" class="thumb"><img ng-src="./data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}"></a>
             <a href="#/details/{{movie.imdbID}}">
             <p>{{movie.title}}</p></a>
-          </li>
-        </ul>
+          </div>
+
+      </div>
+

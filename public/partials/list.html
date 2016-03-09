@@ -16,11 +16,15 @@
       </select>
 
     </div>
+    <div class"row">
+      <input type="radio" ng-model="reverse" ng-value="false" selected> Ascending
+      <input type="radio" ng-model="reverse" ng-value="true" selected> Descending
+    </div>
     <div class="col-md-10">
       <!--Body content-->
 
       <ul class="movies">
-        <li ng-repeat="movie in movies | filter:query | orderBy:orderProp" class="thumbnail">
+        <li ng-repeat="movie in movies | filter:query | orderBy:orderProp:reverse" class="thumbnail">
           <a href="#/details/{{movie.imdbID}}" class="thumb"><img ng-src="./data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}"></a>
           <a href="#/details/{{movie.imdbID}}">
           <p>{{movie.title}}</p>
