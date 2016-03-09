@@ -1,18 +1,24 @@
-<div class ="row">
-    <a href="#/gallery" class="button">Gallery</a>
-    <a href="#/list" class="button">Search</a>
-  </div>
 
-<div class="detail">
-	<div class ="row">
-	    <a class="button" ng-click='next(myMovie.rank)'>Next</a>
-	    <a class="button" ng-click='previous(myMovie.rank)'>Previous</a>
+
+	<div class="detail">
+		<div class="large-3 large-centered columns">
+
+		<div class = "help_details"> 
+
+		<div class ="row">
+
+			    <a class="button" ng-click='next(myMovie.rank)'>Next</a>
+			    <a class="button" ng-click='previous(myMovie.rank)'>Previous</a>
+		</div>
+
+		<div class ="row">
+					<img ng-src="./data/images/{{params.id}}.jpg">
+
+					<h2>{{myMovie.title}}</h2>
+					<h3>Rank: {{myMovie.rank}}</h3>
+					<p>Plot: {{myMovie.plot}}</p>
+				</div>
+		</div>
 	</div>
 
-	<img ng-src="./data/images/{{params.id}}.jpg">
-
-	<h2>{{myMovie.title}}</h2>
-	<h3>{{myMovie.rank}}</h3>
-	<p>{{myMovie.plot}}</p>
-
-</div>
+	</div>
