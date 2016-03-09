@@ -32,9 +32,6 @@ mp3Controllers.controller('detailsController', ['$scope', '$http', '$routeParams
 			  });
 
 			  $scope.next = function(curr_rank) {
-			    console.log("yo");
-			    console.log(curr_rank);
-			    console.log($location.path());
 			    var next_rank=curr_rank+1;
 			    var next_id;
 			    var first_id;
@@ -47,7 +44,6 @@ mp3Controllers.controller('detailsController', ['$scope', '$http', '$routeParams
 							break;
 						}
 					}
-				console.log(i);
 				if (next_id){
 					var new_loc="/details/"+next_id;
 					$location.path(new_loc);
@@ -59,9 +55,6 @@ mp3Controllers.controller('detailsController', ['$scope', '$http', '$routeParams
 			  }
 
 			   $scope.previous = function(curr_rank) {
-			    console.log("yo");
-			    console.log(curr_rank);
-			    console.log($location.path());
 			    var next_rank=curr_rank-1;
 			   
 				    var next_id;
